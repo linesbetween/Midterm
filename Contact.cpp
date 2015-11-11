@@ -9,7 +9,8 @@ int Contact::numberOfContacts = 0;//  initialize static variable here
 
 Contact::Contact(){
 	name = Name();
-	numberOfPhoneNumbers = 0;
+	numberOfPhoneNumbers = 1;
+	phoneNumbers = new string[1];
 	//phoneNumbers pointer still points to NULL
 	//numberOfContacts++; // don't add number if empty contacts are created
 	
