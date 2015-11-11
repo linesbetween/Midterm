@@ -23,7 +23,7 @@ void Name::setLastName(string s){
 }
 
 void Name::printName() {
-	cout << "First name is: "<<firstName<<", Last name is: "<< lastName<<"\n";
+	cout << "\n First name is: "<<firstName<<", Last name is: "<< lastName<<"\n";
 }
 
 //two getters already implemented in hearder file

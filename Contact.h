@@ -16,11 +16,21 @@ public:
 	Contact(Contact &);
 	~Contact();
 
+	Name getName()
+	{return name;}//added
+	void setName(string first, string last)
+	{name.setFirstName(first);
+	name.setLastName(last);}//added
+
 	void setNumberOfPhoneNumbers(int);
 	int getNumberOfPhoneNumbers();
-	string * getPhoneNumberArray();// renameed
+
 	void setPhoneNumberArray(string *); //added
+	string * getPhoneNumberArray();// renameed
+
+	void increaseNumberOfContacts(){numberOfContacts++;};//added
 	int showNumberOfContacts();
+
 	void displayContact();
 };
 

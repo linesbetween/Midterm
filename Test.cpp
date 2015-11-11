@@ -30,10 +30,20 @@ int main(){
 
 
 	//test contact.h
-	const int CAP = 10;
+	const int CAP = 10; // maximun contacts in book is 10
+	Contact list[CAP];//array of contacts, the max capacity is 100;
+	cout<<"empty contact list created \n";
+
+	/* Unecessary, causes destructor problem
+	//create default contacts 
+	for (int k=0;k<CAP;k++){
+		list[k]=Contact();
+	}
+	*/
+	cout<<"default contacts created \n";
 	int i = 0;
 	char condition ='y';
-	Contact list[CAP];//array of contacts, the max capacity is 100;
+	//Modify default contacts
 	while ((i < CAP) && (condition == 'y')) {
 		
 		cout << "Please enter contact first name \n";
@@ -42,7 +52,12 @@ int main(){
 		cin >> last;
 		cout << "Please enter number of phone numbers \n";
 		cin >> num;
-		list[i] = Contact(first, last, num);
+		//list[i] = Contact(first, last, num);
+		//instead of using constructor (since default constructor already called outside while loop)
+		//use setters.
+		list[i].setName(first, last);
+		list[i].setNumberOfPhoneNumbers(num);
+		list[i].increaseNumberOfContacts();
 		list[i].showNumberOfContacts();
 
 		//use temp to store user input
@@ -55,13 +70,15 @@ int main(){
 		list[i].setPhoneNumberArray(temp);
 		list[i].displayContact();
 		i++;
-		cout << "conitnue? y/n (lowercase)";		
+		cout << "conitnue? y/n (lowercase) \n";		
 		cin >> condition;
 	}
 
 	for (int k = 0; k < i; k++) {
 		list[k].displayContact();
 	}
+
+	cout<<"display finished";
 		
 
 	system("pause");

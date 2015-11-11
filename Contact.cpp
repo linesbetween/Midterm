@@ -33,9 +33,10 @@ Contact::Contact(Contact &other){
 
 Contact::~Contact(){
 	//TODO delete name
+	cout<<"destroyed";
 	delete[] phoneNumbers;
 	//numberOfContacts--;
-	cout<<"destroyed";
+	
 	
 }
 
@@ -54,7 +55,8 @@ string* Contact::getPhoneNumberArray(){
 void Contact::setPhoneNumberArray(string *list){ //pass pointer
 	//copy the input array to phoneNumbers.
 	phoneNumbers=list;
-	/*for (int i = 0; i < numberOfPhoneNumbers; i++){
+	/*
+	for (int i = 0; i < numberOfPhoneNumbers; i++){
 		phoneNumbers[i] = list[i];
 	}
 	*/
@@ -62,16 +64,16 @@ void Contact::setPhoneNumberArray(string *list){ //pass pointer
 
 
 int Contact::showNumberOfContacts(){
-	cout << "\n Number of contacts: " << numberOfContacts << "\n";
+	cout << "\n Number of contacts: " << numberOfContacts<<"\n";
 	return numberOfContacts;
 }
 
 void Contact::displayContact(){
 	name.printName();
-	cout << "\n Number of phones: " << numberOfPhoneNumbers;
+	cout << "Number of phones: " << numberOfPhoneNumbers ;
 	for (int i = 0; i < numberOfPhoneNumbers; i++){
 		cout << "\n";
-		cout << "Phone #" << i << ": " << phoneNumbers[i];
+		cout << "Phone #" << i+1 << ": " << phoneNumbers[i];
 	}
 	cout << "\n";
 }
